@@ -23,17 +23,6 @@ class Conta:
         self.__saldo = saldo
         self.__limite= limite
 
-    @property
-    def nome(self):
-        print('Chamando @property nome')
-        return self.__nome.title() #title makes the string start with capital letter
-
-    
-    @nome.setter
-    def nome(self, nome):
-        print('Chamando setter nome()')
-        return self.__nome.title()
-
     # creating a method called extrato
     def extrato(self):
         print("Saldo {} do titular {}".format(self.__saldo,self.__titular))
