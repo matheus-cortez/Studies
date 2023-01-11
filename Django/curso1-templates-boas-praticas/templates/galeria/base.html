@@ -1,0 +1,31 @@
+{% load static %} <!-- importante deixar claro para o Jinja2 que devemos carregar um arquivo estático
+    Para o Django, tudo que não é HTML (CSS, JS, imagens) são arquivos estáticos que devem ser
+    evidenciados como tal-->
+
+<!-- o arquivo base.html irá conter todo o código que index.html e imagem.html tem em comum,
+de modo a estarmos alinhado com a filosofia de DRY (Dont Repeat Yourself)-->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alura Space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/styles/style.css' %}">
+    <!-- também devemos deixar claro para o Jinja2 em href de styles/style.css onde achar
+    os styles estáticos. Também fazemos isso para várias imagens abaixo -->
+</head>
+
+<body>
+    <!-- se tivéssemos implementado a partial _menu.html, poderíamos a inserir abaixo, assim como _footer.html-->
+    
+    {% block content %}{% endblock %} <!-- irá carregar o conteúdo dos blocos no qual
+    base.html for chamado -->
+    {% include 'galeria/partials/_footer.html' %} <!-- incluir o footer -->
+</body>
+
+</html>

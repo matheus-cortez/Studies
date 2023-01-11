@@ -6,4 +6,7 @@ from django.shortcuts import render
 def index(request):
     # 
     # return HttpResponse('<h1>Alura Space</h1><p>Bem vindo ao espaço</p>')
-    return render(request, 'index.html')
+    return render(request, 'galeria/index.html')
+
+def imagem(request): # referencia a pasta onde devemos buscar os arquivos html
+    return render(request, 'galeria/imagem.html')
