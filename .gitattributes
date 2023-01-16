@@ -1,3 +1,4 @@
 *.ipynb linguist-vendored
-./Statistics\with\Python/*
 *.sql linguist-detectable=true
+*bootstrap.css linguist-vendored
+Django/curso1-templates-boas-praticas/static/admin/* linguist-vendored
