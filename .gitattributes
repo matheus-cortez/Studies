@@ -1,8 +1,3 @@
-./Object-Oriented\Programming/collections-python3/curso2_collections_python3.ipynb linguist-vendored
-./Object-Oriented\Programming/collections-python3/curso1_collections_python3.ipynb linguist-vendored
-./Web\Scraping/Beautiful\Soup/Web\Scraping.ipynb linguist-vendored
-./Statistics\with\Python/1st\Class/Projeto_guiado_análise_descritiva.ipynb linguist-vendored
-./Statistics\with\Python/1st\Class/Curso_de_Estatística_Parte_1.ipynb linguist-vendored
-./Statistics\with\Python/2nd\Class/Estimativas_Respostas.ipynb linguist-vendored
-./Statistics\with\Python/2nd\Class/Curso_de_Estatística_Parte_2.ipynb linguist-vendored
-./Statistics\with\Python/2nd\Class/Versão_bibliotecas.ipynb linguist-vendored
+*.ipynb linguist-vendored
+./Statistics\with\Python/*
+*.sql linguist-detectable=true
