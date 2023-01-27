@@ -1,6 +1,8 @@
 import sys
 sys.path.append("..") # por algum motivo ..codigo.bytebank não estava funcionando
 from codigo.bytebank import Funcionario
+import pytest
+from pytest import mark
 
 # Uma vez que garantimos que o __init__.py está na mesma pasta do arquivo que usaremos como teste,
 # e que estes estão em uma pasta denominada tests,
@@ -22,6 +24,8 @@ class TestClass:
 
 # para realizar o teste, devemos fazer no terminal 'pytest test_bytebank.py'
 # ou 'pytest test_bytebank.py -v' para entrar em mais detalhes
+# podemos rodar apenas o teste acima utilizando pytest -v -k idade
+# nota: serão rodados todos os testes que contém a string depois de -k.
 
     def test_quando_sobrenome_recebe_Lucas_Carvalho_deve_retornar_Carvalho(self):
         # Given
@@ -54,5 +58,29 @@ class TestClass:
 
         assert resultado == esperado
 
+    # o mark é utilizado como uma tag associado a um teste. Desse modo,
+    # podemos escolher rodar apenas testes que contenham a tag calcular_bonus
+    # podemos rodar os testes com essa tag com 'pytest -v -m calcular_bonus'
+    # existem marks padronizados. podemos ver eles com pytest --markers
+    #@mark.calcular_bonus 
+    def test_quando_calcular_bonus_recebe_1000_deve_retornar_100(self):
+        entrada = 1000
+        esperado = 100
 
+        funcionario_teste = Funcionario('teste', '11/11/2000', entrada)
+        resultado = funcionario_teste.calcular_bonus()
 
+        assert resultado == esperado
+
+    # um método com exception
+    #@mark.calcular_bonus
+    def test_quando_calcular_bonus_recebe_100000000_deve_retornar_exception(self): 
+        with pytest.raises(Exception):
+            entrada = 100000000
+            # esperado = 100 # não é necessário pois já está explícito com o pytest.raises
+
+            funcionario_teste = Funcionario('teste', '11/11/2000', entrada)
+            resultado = funcionario_teste.calcular_bonus()
+
+            #assert resultado == esperado
+            assert resultado # não faz comparação pois já está explícito com o pytest.raises

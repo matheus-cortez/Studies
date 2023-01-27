@@ -10,6 +10,7 @@ from bytebank import Funcionario
 Apesar desse teste funcionar, podemos realizar testes como esse de forma automatizada
 '''
 
+'''#
 def teste_idade(): # Testando de forma unitária o método para checar a idade
     funcionario_teste = Funcionario('Teste', '13/03/2000', 1111)
     print(f'Teste = {funcionario_teste.idade()}')
@@ -21,6 +22,7 @@ def teste_idade(): # Testando de forma unitária o método para checar a idade
     print(f'Teste = {funcionario_teste2.idade()}')
 
 teste_idade()
+'''
 
 '''
 note que para testar muitos cenários, esse teste mesmo que automatizado começa a se tornar inviável
@@ -61,4 +63,8 @@ Utilizando o PyTest
     * altamente escalável
     * utilização simples
 '''
+
+ana = Funcionario('Ana', '12/03/1997', 1000)
+
+print(ana.calcular_bonus)
 
