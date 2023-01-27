@@ -1,0 +1,1 @@
+O objetivo desse repositório é fazer testes em um arquivo python de classes chamado `bytebank.py`. A partir disso, fizemos comentários didáticos com relação às melhorias feitas.

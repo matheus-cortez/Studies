@@ -1,0 +1,1 @@
+# esse arquivo __init__.py permite que o pytest entenda que aqui serão conduzidos os testes.
