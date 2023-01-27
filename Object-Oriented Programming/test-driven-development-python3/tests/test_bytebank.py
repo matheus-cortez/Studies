@@ -36,6 +36,23 @@ class TestClass:
         assert resultado == esperado
 
     # Da forma que fizemos até agora, nós implementamos uma alteração no código
-    # e em seguida testamos. Contudo, podemos (e devemos) fazer o contrário:
-    # Fazer as alterações em forma de teste antes de as implementarmos.
+    # e em seguida testamos. Contudo, podemos (e devemos) fazer o contrário para seguir o TDD:
+    # Analisar as regras de negócio (solicitação de uma nova funcionalidade, por exemplo,
+    # fazer as alterações de modo a que os novos testes sejam aprovados, e depois realizamos 
+    # a refatoração de modo que nosso código fique bem organizado/legível.
+
+    # nova funcionalidade solicitada: diminuir em 10% o salário dos diretores da empresa
+
+    def test_quando_decrescimo_salario_recebe_100000_deve_retornar_90000(self):
+        entrada_salario = 100000
+        entrada_nome = 'Paulo Bragança'
+        esperado = 90000
+
+        funcionario_teste = Funcionario(entrada_nome, '11/11/2000', entrada_salario)
+        funcionario_teste.decrescimo_salario()
+        resultado = funcionario_teste.salario
+
+        assert resultado == esperado
+
+
 
