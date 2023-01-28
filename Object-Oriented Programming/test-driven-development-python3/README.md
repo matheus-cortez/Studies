@@ -2,6 +2,9 @@
 
 O objetivo desse repositório é realizar a ao TDD com testes unitários relativos a arquivo python de classes e métodos chamado `bytebank.py`. Criamos um diretório `tests` e o arquivo `test_bytebank.py` para permitir a automatização de nossos testes. Para isso, foram utilizados os pacotes `pytest` e `pytest-cov`.
 
+### Detalhes do projeto
+Mais informações sobre a utilização do pytest estão disponíveis em tests > test_bytebank.py.
+
 ### Comparativo entre testes manuais e automatizados:
 - Manuais:
     * Lento
@@ -14,18 +17,18 @@ O objetivo desse repositório é realizar a ao TDD com testes unitários relativ
     * Segurança em alteração do código
     * Influencia a cultura do refactoring (melhoria contínua do código)
 
-- Tipos de teste:
-    * Teste unitário: testa uma pequena parte da aplicação. É esse teste que focaremos nesse curso.
+### Tipos de teste:
+- Teste unitário: testa uma pequena parte da aplicação. É esse teste que focaremos nesse curso.
     Geralmente é feito pelos desenvolvedores do sistema, e está mais ligado ao nível mais baixo da aplicação.
 
-    * Teste de integração: testa a integração entre as unidades. Geralmente são mais complexos para
+- Teste de integração: testa a integração entre as unidades. Geralmente são mais complexos para
     serem desenvolvidos e mais lentos para serem executados. O ideal é que esses testes sejam feitos
     após os testes unitários.
 
-    * Teste de ponta a ponta (E2E): é um teste para todo o processo para a aplicação, 
+- Teste de ponta a ponta (E2E): é um teste para todo o processo para a aplicação, 
     que simula a utilizaçao por um usuário
 
-- Utilizando o PyTest
-    * Possui múltiplos plugins
-    * Altamente escalável
-    * Utilização simples
+### Por que utilizar o PyTest
+- Possui múltiplos plugins
+- Altamente escalável
+- Utilização simples

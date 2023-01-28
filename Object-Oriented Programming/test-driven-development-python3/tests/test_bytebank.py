@@ -84,3 +84,33 @@ class TestClass:
 
             #assert resultado == esperado
             assert resultado # não faz comparação pois já está explícito com o pytest.raises
+
+
+    '''
+        Além de rodar o 'pytest test_bytebank.py', podemos rodar variações do 'pytest --cov' para checar a porcentagem
+        de funções que estão cobertas pelos nossos testes. 
+    pytest --cov=codigo tests/
+    pytest --cov=codigo tests/ --cov-report term-missing # nos lista as linhas de código que ainda não
+        foram testadas.
+    pytest --cov=codigo tests/ --cov-report html # nos mostra um report bem mais detalhado em html
+    '''
+
+    # criamos esse teste apenas para dar 100% de cobertura para o nosso teste, mas esse tipo
+    # de teste não faz muito sentido e podemos definir as funções que não precisam ser testadas
+    # em um arquivo .coveragerc
+    def test_retorno_str(self):
+        nome, data_nascimento, salario = 'Teste', '12/03/2000', 1000
+        esperado = 'Funcionario(Teste, 12/03/2000, 1000)'
+
+        funcionario_teste = Funcionario(nome, data_nascimento, salario)
+        resultado = funcionario_teste.__str__()
+
+        assert resultado == esperado
+
+    '''
+    também podemos personalizar comandos em .coveragerc para que possamos rodar o pytest --cov com menos linhas.
+    Do jeito que o .coveragerc está atualmente definido, podemos rodar apenas pytest --cov pois já foi explicitado
+    que o source está em ./codigo
+
+    em pytest.ini, com addopts = -v --cov=codigo tests/ --cov-report term-missing, apenas rodar o comando 'pytest' é o suficiente
+    '''
